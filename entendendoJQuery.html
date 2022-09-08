@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Entendendo jQuery</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Entendendo jQuery</h1>
+    <div>1</div>
+    <div>2</div>
+
+    <script>
+        // $ = referente a Jquery
+        $('div').hide(500).show(500).fadeOut(500)
+        console.log($('div').get(0))
+        // quando se usa o 'GET' não é possivel usar função, pois ele não pega os OBJs puros da DOM (dados dos objetos que compõem a estrutura e o conteúdo de um documento na Web.)
+
+        //Para verificar se o OBJ está vazio
+        console.log($.isEmptyObject({}))
+
+        //Para saber se tal elemento está dentro de um array, e em qual índice
+        console.log(jQuery.inArray(3, [1, 2, 3]))
+
+        //função
+        $.fn.fundoVerde = function () {
+            this.css('background-color', 'green')
+            return this
+        }
+
+        $('body').fundoVerde().fadeOut(2000)
+    </script>
+</body>
